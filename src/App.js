@@ -223,6 +223,7 @@ function App() {
   };
 
   // On lance fetchTickets
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchTickets();
   }, []);
