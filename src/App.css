@@ -1,38 +1,160 @@
+:root {
+  --primary-color: #ff613c;
+  --secondary-color: #ff9378;
+  --background-color: #f9f9f9;
+  --table-header-bg: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --hover-bg: rgba(74, 144, 226, 0.1);
+  --font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  /* On centre le contenu globalement */
+  display: flex;
+  justify-content: center;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 0.8rem;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--primary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+table {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+th,
+td {
+  padding: 10px 5px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+th {
+  background: var(--table-header-bg);
+  color: #fff;
+  font-weight: 900;
+}
+
+td {
+  line-height: 1.4;
+}
+
+tr:hover {
+  background-color: var(--hover-bg);
+  transition: background-color 0.3s ease;
+}
+
+/* Largeur spécifique des colonnes */
+table th:first-child,
+table td:first-child {
+  width: 50px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2),
+table th:nth-child(6),
+table td:nth-child(6) {
+  width: 500px;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+  width: 100px;
+}
+
+table th:nth-child(3),
+table td:nth-child(3),
+table th:nth-child(5),
+table td:nth-child(5) {
+  width: 50px;
+}
+
+/* Adaptation pour les petits écrans */
+@media screen and (max-width: 768px) {
+  th,
+  td {
+    padding: 10px;
   }
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    width: auto;
+  }
+}
+
+/* Animation pour le spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Animation de fade-in pour les lignes de ticket */
+.ticket-row {
+  animation: fadeIn 0.5s ease-in;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.ticket-row:hover {
+  background-color: #f9f9f9;
+}
+
+/* Styles pour les contrôles */
+.controls {
+  margin: 20px 0;
+  text-align: center;
+}
+
+button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  cursor: pointer;
 }

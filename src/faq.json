@@ -1,0 +1,434 @@
+[
+  {
+    "category": "Actus & Résolutions",
+    "question": "Réinitialisation de la connexion de WeWard à Google Fit"
+  },
+  {
+    "category": "Actus & Résolutions",
+    "question": "Maintenance prévue le mardi 18 février 2025"
+  },
+  {
+    "category": "Actus & Résolutions",
+    "question": "Nouvelle fonctionnalité : Challenges XP (10/01/2025)"
+  },
+  {
+    "category": "Actus & Résolutions",
+    "question": "Améliorations Leaderboards / XP 🚀"
+  },
+  {
+    "category": "Premium",
+    "question": "Premium : Comment l'obtenir et le garder ?"
+  },
+  {
+    "category": "Premium",
+    "question": "Premium : J'ai perdu mon statut. Comment le renouveler ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Widget WeWard pour Android"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Comment bien utiliser l'application ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Notification \"Rappel de validation de pas\""
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Centre de notifications 🔔"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Modifier une adresse e-mail"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Comment gagner des Wards ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Combien vaut 1 ward ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Combien faut-il faire de pas pour gagner un Ward ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "J'ai dépassé le dernier palier, vais-je avoir plus de récompenses ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "J'ai oublié de valider mes pas hier, puis-je récupérer mes Wards et mes pas aujourd'hui ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Mes pas sont-ils comptés quand je ne suis pas connecté ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Que fait WeWard avec mes données ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Comment personnaliser mon pseudo ?"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Supression de compte"
+  },
+  {
+    "category": "Mes débuts sur WeWard",
+    "question": "Rubrique \"Championnats\" dans les paramètres de l'app"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "La Course aux Étoiles : Le nouveau podomètre WeWard qui s'adapte à votre rythme"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "Fitbit : J'ai des difficultés de synchronisation - que faire ?"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "La Flamme 🔥"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "Choisissez votre source de données de pas"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "iOS : Activation sources de données et statistiques 👣📊"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "Apps non supportées par WeWard : synchronisation des pas avec application tierce"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "Android : Mon compteur de pas ne fonctionne pas - que faire ?"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "iPhone: Mon compteur de pas ne fonctionne pas. Que faire ?"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "Huawei"
+  },
+  {
+    "category": "Compteur de pas, km, marches montées",
+    "question": "L’application prend-t-elle en compte les pas effectués en vélo ?"
+  },
+  {
+    "category": "Parrainage",
+    "question": "Parrainage"
+  },
+  {
+    "category": "Parrainage",
+    "question": "Comment parrainer une entreprise ?"
+  },
+  {
+    "category": "Connexion",
+    "question": "Je ne reçois pas le lien de connexion. Que faire ?"
+  },
+  {
+    "category": "Connexion",
+    "question": "Comment se connecter/reconnecter à l'application WeWard ?"
+  },
+  {
+    "category": "Connexion",
+    "question": "'J'ai une adresse jetable et je n'arrive pas à me reconnecter. Que faire ?"
+  },
+  {
+    "category": "Connexion",
+    "question": "J'ai changé de téléphone / été déconnecté(e). Comment récupérer mon compte ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Comment fonctionnent les challenges \"Validez XXXX pas en X jours ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Évènements/Championnats"
+  },
+  {
+    "category": "Challenges",
+    "question": "Est-ce que ne pas réussir un challenge m'empêchera de passer au niveau supérieur ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Je viens de passer au niveau supérieur et certains challenges sont déjà validés. Pourtant, je n’ai pas été récompensé(e). Pourquoi?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Je n'ai pas eu le temps de finir un challenge qui n'est plus disponible dans l'app. Pourrais-je le faire plus tard ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Comment vérifier son classement sur un championnat ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Mon challenge \"Validez vos pas XX jours consécutifs\" s'est remis à zéro"
+  },
+  {
+    "category": "Challenges",
+    "question": "Comment fonctionnent les challenges de \"5 000 pas en 30 min.\" ou \"7 000 - 8 000 pas en 1h\" ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Challenges \"Parrainez X nouveaux filleuls\" - Comment ça marche ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Comment réussir les challenges avec des objectifs précis ? (10101, 15151, 23456 pas)"
+  },
+  {
+    "category": "Challenges",
+    "question": "Comment réussir le challenge \"Réalisez 5 questionnaires\" ?"
+  },
+  {
+    "category": "Challenges",
+    "question": "Challenge \"Achetez en ligne chez un partenaire WeWard\". Comment le valider ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Comment fonctionne la loterie présente sur WeWard ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Virement bancaire ou carte-cadeau refusé. Pourquoi ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Que puis-je faire avec mes Wards ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Offres & Récompenses éphémères sur la page Convertir"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Je n'ai pas reçu ma carte cadeau"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "J'ai commandé un cadeau par erreur, est-il possible de me rembourser mes Wards ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Quelle est la durée de validité d'une carte cadeau ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Ma carte cadeau ne fonctionne pas. Vers qui me tourner ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Carte cadeau refusée. Pourquoi ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Combien de Wards dois-je avoir afin de pouvoir demander un virement bancaire ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Comment faire une demande de virement bancaire ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Combien de temps faut-il attendre pour un virement bancaire ? 💸"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Pourquoi avez-vous besoin de ma piéce d'identité ?"
+  },
+  {
+    "category": "Page Convertir",
+    "question": "Je ne souhaite pas apparaître dans la liste des derniers bénéficiaires des virements"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Comment faire un achat chez nos partenaires et être récompensé(e) ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Pourquoi mes Wards sont-ils toujours en attente ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Mes Wards ne sont pas en attente 😢 Comment envoyer une réclamation ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Le montant de la récompense mise en attente ne correspond pas au montant que je devrais avoir 😐"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "J’ai renvoyé un/plusieurs article(s) de ma commande, serai-je tout de même récompensé(e) ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "J'ai oublié de passer par l'application pour effectuer un achat, puis-je tout de même être récompensé(e) en vous envoyant la facture ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Mon achat a été refusé. Pourquoi?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "J'ai reçu un mail de confirmation d'achat, mais je n'ai rien acheté..."
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Comment activer mes cookies ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Comment désactiver mon bloqueur de publicités (ad blocker) ?"
+  },
+  {
+    "category": "Achats Bons Plans",
+    "question": "Comment fonctionnent les Bons d’Achat sur la page Bons Plans ?"
+  },
+  {
+    "category": "Extension Safari - Bons Plans",
+    "question": "Extension Safari (iPhone)"
+  },
+  {
+    "category": "Bannissement",
+    "question": "Mon compte est suspendu, pourquoi ?"
+  },
+  {
+    "category": "WeCards",
+    "question": "Jeu-Concours WeCards (du 20 février 2025 au 24 février 2025)"
+  },
+  {
+    "category": "WeCards",
+    "question": "WeCards: Qu'est-ce qu'un Chapitre Vintage ?"
+  },
+  {
+    "category": "WeCards",
+    "question": "J'ai des cartes en double. Que puis-je en faire ?"
+  },
+  {
+    "category": "WeCards",
+    "question": "WeCards - Découvrez le monde en marchant"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Visionnez et Jouez"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Les jeux : comment ça fonctionne ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Les sondages : comment ça fonctionne ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Comment modifier mon consentement pour la publicité dans WeWard ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Prime Surveys"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "CPX : Trouvez des Réponses à vos Questions"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Je n'ai pas de sondages, pourquoi ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Je n'ai pas reçu ma récompense après avoir terminé un sondage : vers qui me tourner ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Retirer la publicité sur WeWard"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Tapjoy : je n'ai pas reçu ma récompense. Que faire ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "AyetStudio : je n'ai pas reçu ma récompense. Que faire ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Play to earn : je n'ai pas reçu ma récompense. Que faire ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Play to earn : je n'ai pas reçu ma récompense. Que faire ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "RevU : je n'ai pas reçu ma récompense. Que faire ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Mychips : Je n'ai pas reçu ma récompense. Que faire ?"
+  },
+  {
+    "category": "Publicités 📺 - Jeux vidéos 🎮 - Sondages 🗒",
+    "question": "Vidéos qui se lancent automatiquement lors de la validation des pas"
+  },
+  {
+    "category": "Montres connectées ⌚️",
+    "question": "Connecter une montre ou un bracelet Xiaomi sur Android⌚️"
+  },
+  {
+    "category": "Montres connectées ⌚️",
+    "question": "Connecter une montre ou un bracelet Samsung sur Android⌚️"
+  },
+  {
+    "category": "Montres connectées ⌚️",
+    "question": "Connecter montre Amazfit"
+  },
+  {
+    "category": "Montres connectées ⌚️",
+    "question": "Connecter une montre Garmin sur iOS ⌚️"
+  },
+  {
+    "category": "Montres connectées ⌚️",
+    "question": "Comment connecter une montre ou un bracelet connecté OPPO ?"
+  },
+  {
+    "category": "Montres connectées ⌚️",
+    "question": "Connecter une montre Withings (iOS & Android)"
+  },
+  {
+    "category": "Mes ami(e)s et moi sur l'application 👥",
+    "question": "Bug et Correctif du 21 décembre 2024 / Leaderboards XP"
+  },
+  {
+    "category": "Mes ami(e)s et moi sur l'application 👥",
+    "question": "Comment gagner des XP ?"
+  },
+  {
+    "category": "Mes ami(e)s et moi sur l'application 👥",
+    "question": "Qu’est-ce que les XP et comment fonctionnent les Classements ?"
+  },
+  {
+    "category": "Mes ami(e)s et moi sur l'application 👥",
+    "question": "Comment ajouter mes amis sur l'application ?"
+  },
+  {
+    "category": "Mes ami(e)s et moi sur l'application 👥",
+    "question": "Comment envoyer un message à un ami et partager votre progression 📲✨"
+  },
+  {
+    "category": "Mes ami(e)s et moi sur l'application 👥",
+    "question": "Comment supprimer un(e) ami(e) ? 🗑"
+  }
+]

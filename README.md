@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Ticket Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ticket Dashboard is a React/JavaScript frontend application that retrieves support ticket data from [this API](https://weward-sas.github.io/hiring-cs-ai/api_fake_tickets.json) and leverages the OpenAI ChatGPT (gpt-3.5-turbo) language model to analyze, categorize, and prioritize the tickets based on urgency and complexity. It also offers an automated answer generation approach using a local knowledge base (FAQ).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Ticket Retrieval:** Fetch support ticket data from a remote API.
+- **Ticket Analysis:** Use OpenAI ChatGPT to analyze ticket messages and categorize them by theme.
+- **Prioritization & Sorting:** Automatically sort and prioritize tickets based on urgency, complexity, or custom criteria.
+- **Automated Response:** Generate tailored responses based on a local FAQ (faq.json) and pre-defined prompts.
+- **Interactive UI:** Clickable table headers to sort tickets and interactive cells to manually trigger response generation.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the Repository:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Install Dependencies:
+npm install
+npm install cross-env --save-dev
+Start the Development Server:
+npm start
