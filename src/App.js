@@ -252,9 +252,9 @@ function App() {
       return 0;
     });
 
-  // Traitement d'un lot de 10 tickets (pour réduire conso TOKEN en test)
+  // Traitement d'un lot de 5 tickets (pour réduire conso TOKEN en test)
   const processBatch = (startIndex, tickets = allTickets) => {
-    const batch = tickets.slice(startIndex, startIndex + 10).map((ticket) => ({
+    const batch = tickets.slice(startIndex, startIndex + 5).map((ticket) => ({
       ...ticket,
       language: "",
       analysis: "",
@@ -270,9 +270,9 @@ function App() {
     });
   };
 
-  // Passage au lot de 10 suivant
+  // Passage au lot de 5 suivant
   const handleNext = () => {
-    const newIndex = batchIndex + 10;
+    const newIndex = batchIndex + 5;
     if (newIndex < allTickets.length) {
       setBatchIndex(newIndex);
       processBatch(newIndex);
