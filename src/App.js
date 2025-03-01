@@ -18,12 +18,12 @@ const SYSTEM_MESSAGES = {
     "Tu es un expert en relation client. Détermine la langue du message et renvoie la réponse au format exact (ex: Francais (FR) - 🇫🇷).",
 };
 
-// Appel API OpenAI avec gestion simplifiée des erreurs
+// Fonction générique d'appel à l'API OpenAI avec gestion des erreurs
 const callOpenAi = async (ticket, promptFunc, field, transform = (x) => x) => {
   const prompt =
     field === "language"
       ? promptFunc(ticket.message)
-      : promptFunc(ticket.message, faq); // faq importé depuis faq.json
+      : promptFunc(ticket.message, faq); // Utilisation de la FAQ locale
   const requestBody = {
     model: "gpt-3.5-turbo",
     messages: [
@@ -52,7 +52,7 @@ const callOpenAi = async (ticket, promptFunc, field, transform = (x) => x) => {
     if (errorObj.error && errorObj.error.code === "rate_limit_exceeded") {
       throw new Error("GPT limitation reached with the current plan");
     }
-    // Gestion des erreurs insufficient_funds
+    // Gestion des erreurs insufficient_quota
     if (errorObj.error && errorObj.error.code === "insufficient_quota") {
       throw new Error("Not enough fund, prepaid account empty");
     }
@@ -66,7 +66,7 @@ const callOpenAi = async (ticket, promptFunc, field, transform = (x) => x) => {
   return transform(output);
 };
 
-// Hook pour les appels API liés aux tickets
+// --- Hook for API calls ---
 const useTicketApi = (setProcessedTickets) => {
   const analyzeTicket = useCallback(
     async (ticket) => {
@@ -161,10 +161,10 @@ const useTicketApi = (setProcessedTickets) => {
   };
 };
 
-// Composant Spinner
+// --- Spinner Component ---
 const Spinner = () => <div className="spinner" />;
 
-// Composant memo pour une ligne de ticket
+// --- TicketRow Component ---
 const TicketRow = memo(({ ticket, onGenerateResponse }) => (
   <tr className="ticket-row">
     <td>{ticket.id}</td>
@@ -195,7 +195,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Récupération des fonctions API via le hook personnalisé
+  // Retrieve API functions via our custom hook
   const {
     analyzeTicket,
     determinePriority,
@@ -203,32 +203,7 @@ function App() {
     determineLanguage,
   } = useTicketApi(setProcessedTickets);
 
-  // Récupération des tickets JSON en ligne
-  const fetchTickets = async () => {
-    try {
-      const response = await fetch(
-        "https://weward-sas.github.io/hiring-cs-ai/api_fake_tickets.json"
-      );
-      if (!response.ok)
-        throw new Error("Erreur lors du chargement des tickets");
-      const data = await response.json();
-      setAllTickets(data);
-      setLoading(false);
-      processBatch(0, data);
-    } catch (err) {
-      console.error(err);
-      setError(err.message);
-      setLoading(false);
-    }
-  };
-
-  // On lance fetchTickets
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    fetchTickets();
-  }, []);
-
-  // Fonction de tri
+  // --- Sorting function ---
   const sortTicketsFn = (tickets, column, order) =>
     tickets.sort((a, b) => {
       if (column === "id") return order === "asc" ? a.id - b.id : b.id - a.id;
@@ -253,34 +228,64 @@ function App() {
       return 0;
     });
 
-  // Traitement d'un lot de 5 tickets (pour réduire conso TOKEN en test)
-  const processBatch = (startIndex, tickets = allTickets) => {
-    const batch = tickets.slice(startIndex, startIndex + 5).map((ticket) => ({
-      ...ticket,
-      language: "",
-      analysis: "",
-      priority: "",
-      response: "",
-    }));
-    const sorted = sortTicketsFn([...batch], sortColumn, sortOrder);
-    setProcessedTickets(sorted);
-    sorted.forEach((ticket) => {
-      analyzeTicket(ticket);
-      determinePriority(ticket);
-      determineLanguage(ticket);
-    });
-  };
+  // --- processBatch: processes a batch of tickets ---
+  // We remove 'allTickets' from dependencies since we always pass tickets as a parameter.
+  const processBatch = useCallback(
+    (startIndex, tickets) => {
+      const batch = tickets
+        .slice(startIndex, startIndex + 10)
+        .map((ticket) => ({
+          ...ticket,
+          language: "",
+          analysis: "",
+          priority: "",
+          response: "",
+        }));
+      const sorted = sortTicketsFn([...batch], sortColumn, sortOrder);
+      setProcessedTickets(sorted);
+      sorted.forEach((ticket) => {
+        analyzeTicket(ticket);
+        determinePriority(ticket);
+        determineLanguage(ticket);
+      });
+    },
+    [sortColumn, sortOrder, analyzeTicket, determinePriority, determineLanguage]
+  );
 
-  // Passage au lot de 5 suivant
+  // --- fetchTickets: retrieves tickets and processes the first batch ---
+  const fetchTickets = useCallback(async () => {
+    try {
+      const response = await fetch(
+        "https://weward-sas.github.io/hiring-cs-ai/api_fake_tickets.json"
+      );
+      if (!response.ok)
+        throw new Error("Erreur lors du chargement des tickets");
+      const data = await response.json();
+      setAllTickets(data);
+      setLoading(false);
+      processBatch(0, data);
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+      setLoading(false);
+    }
+  }, [processBatch]);
+
+  // useEffect: calls fetchTickets on mount (runs once)
+  useEffect(() => {
+    fetchTickets();
+  }, [fetchTickets]);
+
+  // --- handleNext: load next batch ---
   const handleNext = () => {
-    const newIndex = batchIndex + 5;
+    const newIndex = batchIndex + 10;
     if (newIndex < allTickets.length) {
       setBatchIndex(newIndex);
-      processBatch(newIndex);
+      processBatch(newIndex, allTickets);
     }
   };
 
-  // Tri au clic sur l'entête
+  // --- handleSortByColumn: sort tickets when header clicked ---
   const handleSortByColumn = (column) => {
     const newOrder =
       sortColumn === column ? (sortOrder === "asc" ? "desc" : "asc") : "asc";
