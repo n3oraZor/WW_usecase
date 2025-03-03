@@ -3,10 +3,9 @@ import "./App.css";
 import { prompt1, prompt2, prompt3, prompt4 } from "./Baseprompt";
 import faq from "./faq.json"; // Import de la FAQ locale
 
-// Clé API (.env)
+// API KEY for OPENAI chatgpt (.env)
 const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
-// Messages système par champ
 const SYSTEM_MESSAGES = {
   analysis:
     "Tu es un expert en relation client. Propose une catégorie pour segmenter la demande en te basant sur la FAQ.",
@@ -18,12 +17,12 @@ const SYSTEM_MESSAGES = {
     "Tu es un expert en relation client. Détermine la langue du message et renvoie la réponse au format exact (ex: Francais (FR) - 🇫🇷).",
 };
 
-// Fonction générique d'appel à l'API OpenAI avec gestion des erreurs
+// General API call with additional errors management
 const callOpenAi = async (ticket, promptFunc, field, transform = (x) => x) => {
   const prompt =
     field === "language"
       ? promptFunc(ticket.message)
-      : promptFunc(ticket.message, faq); // Utilisation de la FAQ locale
+      : promptFunc(ticket.message, faq); // link to local FAQ
   const requestBody = {
     model: "gpt-3.5-turbo",
     messages: [
@@ -48,11 +47,11 @@ const callOpenAi = async (ticket, promptFunc, field, transform = (x) => x) => {
     } catch (e) {
       throw new Error(`Erreur API OpenAI (${field}) : ${errorText}`);
     }
-    // Gestion des erreurs rate_limit_exceeded
+    // rate_limit_exceeded (too much request at same time)
     if (errorObj.error && errorObj.error.code === "rate_limit_exceeded") {
       throw new Error("GPT limitation reached with the current plan");
     }
-    // Gestion des erreurs insufficient_quota
+    // insufficient_quota (no more money  )
     if (errorObj.error && errorObj.error.code === "insufficient_quota") {
       throw new Error("Not enough fund, prepaid account empty");
     }
@@ -66,8 +65,11 @@ const callOpenAi = async (ticket, promptFunc, field, transform = (x) => x) => {
   return transform(output);
 };
 
-// --- Hook for API calls ---
+// Hook for API calls
 const useTicketApi = (setProcessedTickets) => {
+  
+  //PROMPT1 script
+  
   const analyzeTicket = useCallback(
     async (ticket) => {
       try {
@@ -88,6 +90,7 @@ const useTicketApi = (setProcessedTickets) => {
     [setProcessedTickets]
   );
 
+    //PROMPT2 script
   const determinePriority = useCallback(
     async (ticket) => {
       try {
@@ -111,6 +114,7 @@ const useTicketApi = (setProcessedTickets) => {
     [setProcessedTickets]
   );
 
+    //PROMPT3 script
   const proposeResponse = useCallback(
     async (ticket) => {
       try {
@@ -133,6 +137,7 @@ const useTicketApi = (setProcessedTickets) => {
     [setProcessedTickets]
   );
 
+    //PROMPT4 script
   const determineLanguage = useCallback(
     async (ticket) => {
       try {
@@ -161,10 +166,10 @@ const useTicketApi = (setProcessedTickets) => {
   };
 };
 
-// --- Spinner Component ---
+//  Spinner Component 
 const Spinner = () => <div className="spinner" />;
 
-// --- TicketRow Component ---
+//  TicketRow Component 
 const TicketRow = memo(({ ticket, onGenerateResponse }) => (
   <tr className="ticket-row">
     <td>{ticket.id}</td>
@@ -190,12 +195,12 @@ function App() {
   const [allTickets, setAllTickets] = useState([]);
   const [processedTickets, setProcessedTickets] = useState([]);
   const [batchIndex, setBatchIndex] = useState(0);
-  const [sortColumn, setSortColumn] = useState("id"); // "id", "priority" ou "analysis"
-  const [sortOrder, setSortOrder] = useState("desc"); // "asc" ou "desc"
+  const [sortColumn, setSortColumn] = useState("id"); // "id", "priority" or "analysis"
+  const [sortOrder, setSortOrder] = useState("desc"); // "asc" or "desc"
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Retrieve API functions via our custom hook
+  // Retrieve API function
   const {
     analyzeTicket,
     determinePriority,
@@ -203,7 +208,7 @@ function App() {
     determineLanguage,
   } = useTicketApi(setProcessedTickets);
 
-  // --- Sorting function ---
+  //  Sort function 
   const sortTicketsFn = (tickets, column, order) =>
     tickets.sort((a, b) => {
       if (column === "id") return order === "asc" ? a.id - b.id : b.id - a.id;
@@ -228,8 +233,8 @@ function App() {
       return 0;
     });
 
-  // --- processBatch: processes a batch of tickets ---
-  // We remove 'allTickets' from dependencies since we always pass tickets as a parameter.
+  //  processBatch: processes a batch of tickets
+  //  We remove 'allTickets' from dependencies since we always pass tickets as a parameter.
   const processBatch = useCallback(
     (startIndex, tickets) => {
       const batch = tickets
@@ -252,7 +257,7 @@ function App() {
     [sortColumn, sortOrder, analyzeTicket, determinePriority, determineLanguage]
   );
 
-  // --- fetchTickets: retrieves tickets and processes the first batch ---
+  // FetchTickets: retrieves tickets and processes the first batch 
   const fetchTickets = useCallback(async () => {
     try {
       const response = await fetch(
@@ -276,7 +281,7 @@ function App() {
     fetchTickets();
   }, [fetchTickets]);
 
-  // --- handleNext: load next batch ---
+  // handleNext: load next batch of 10
   const handleNext = () => {
     const newIndex = batchIndex + 10;
     if (newIndex < allTickets.length) {
@@ -285,7 +290,7 @@ function App() {
     }
   };
 
-  // --- handleSortByColumn: sort tickets when header clicked ---
+  // handleSortByColumn: sort tickets when header clicked 
   const handleSortByColumn = (column) => {
     const newOrder =
       sortColumn === column ? (sortOrder === "asc" ? "desc" : "asc") : "asc";

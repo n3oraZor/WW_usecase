@@ -1,6 +1,6 @@
 // BasePrompt.js
 
-// PROMPT1 : Catégorisation & détection de problèmes techniques
+// PROMPT1 : Create categories based on FAQ and propose additional if not found
 export const prompt1 = (ticketMessage, faqData) => `
 PROMPT1:
 Tu es expert relation client/support. Utilise la FAQ ${JSON.stringify(faqData)}.
@@ -11,7 +11,7 @@ Tu es expert relation client/support. Utilise la FAQ ${JSON.stringify(faqData)}.
 Ticket: ${ticketMessage}
 `;
 
-// PROMPT2 : Évaluation du niveau de priorité
+// PROMPT2 : Determine priority
 export const prompt2 = (ticketMessage, faqData) => `
 PROMPT2:
 Évalue la priorité (1=urgent, 2=important, 3=normal) via la FAQ ${JSON.stringify(
@@ -22,7 +22,7 @@ PROMPT2:
 Ticket: ${ticketMessage}
 `;
 
-// PROMPT3 : Réponse courte + auto-diagnostic + escalade
+// PROMPT3 : Short answer to ticket + offer selfcare or escalation
 export const prompt3 = (ticketMessage, faqData) => `
 PROMPT3:
 
@@ -49,7 +49,7 @@ Si le ticket est en italien, ta réponse DOIT être entièrement en italien et n
 Ticket: ${ticketMessage}
 `;
 
-// PROMPT4 : Détection de la langue
+// PROMPT4 : Find the language
 export const prompt4 = (ticketMessage) => `
 PROMPT5:
 Détermine la langue du message et réponds au format exact:

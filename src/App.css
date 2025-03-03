@@ -80,7 +80,6 @@ tr:hover {
   transition: background-color 0.3s ease;
 }
 
-/* Largeur spécifique des colonnes */
 table th:first-child,
 table td:first-child {
   width: 50px;
@@ -119,7 +118,7 @@ table td:nth-child(5) {
   }
 }
 
-/* Animation pour le spinner */
+/* spinner */
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
   width: 24px;
@@ -137,7 +136,7 @@ table td:nth-child(5) {
   }
 }
 
-/* Animation de fade-in pour les lignes de ticket */
+/* Animation for ticket rows */
 .ticket-row {
   animation: fadeIn 0.5s ease-in;
   transition: background-color 0.3s ease-in-out;
@@ -147,7 +146,7 @@ table td:nth-child(5) {
   background-color: #f9f9f9;
 }
 
-/* Styles pour les contrôles */
+/* Styles for filters */
 .controls {
   margin: 20px 0;
   text-align: center;
