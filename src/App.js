@@ -166,8 +166,44 @@ const useTicketApi = (setProcessedTickets) => {
   };
 };
 
-//  Spinner Component 
+//  Spinner Component
 const Spinner = () => <div className="spinner" />;
+
+//  Skeleton loading row
+const SkeletonRow = () => (
+  <tr className="ticket-row">
+    <td><span className="skeleton" style={{ width: 30 }} /></td>
+    <td><span className="skeleton" style={{ width: "92%" }} /></td>
+    <td><span className="skeleton" style={{ width: 44 }} /></td>
+    <td><span className="skeleton" style={{ width: 80 }} /></td>
+    <td><span className="skeleton" style={{ width: 22 }} /></td>
+    <td><span className="skeleton" style={{ width: "92%" }} /></td>
+  </tr>
+);
+
+//  Skeleton table shown while fetching the ticket JSON
+const SkeletonTable = () => (
+  <div className="App">
+    <h1>MODERATION TOOL</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID zendesk</th>
+          <th>Message</th>
+          <th>Language</th>
+          <th>Category</th>
+          <th>Priority</th>
+          <th>Proposed answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Array.from({ length: 5 }, (_, i) => (
+          <SkeletonRow key={i} />
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
 
 //  TicketRow Component 
 const TicketRow = memo(({ ticket, onGenerateResponse }) => (
@@ -191,26 +227,9 @@ const TicketRow = memo(({ ticket, onGenerateResponse }) => (
   </tr>
 ));
 
-function App() {
-  const [allTickets, setAllTickets] = useState([]);
-  const [processedTickets, setProcessedTickets] = useState([]);
-  const [batchIndex, setBatchIndex] = useState(0);
-  const [sortColumn, setSortColumn] = useState("id"); // "id", "priority" or "analysis"
-  const [sortOrder, setSortOrder] = useState("desc"); // "asc" or "desc"
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  // Retrieve API function
-  const {
-    analyzeTicket,
-    determinePriority,
-    proposeResponse,
-    determineLanguage,
-  } = useTicketApi(setProcessedTickets);
-
-  //  Sort function 
-  const sortTicketsFn = (tickets, column, order) =>
-    tickets.sort((a, b) => {
+//  Sort function (pure — defined outside component to avoid recreating on each render)
+const sortTicketsFn = (tickets, column, order) =>
+  tickets.sort((a, b) => {
       if (column === "id") return order === "asc" ? a.id - b.id : b.id - a.id;
       if (column === "priority") {
         const aVal = parseInt(a.priority) || 999,
@@ -232,6 +251,22 @@ function App() {
       }
       return 0;
     });
+
+function App() {
+  const [allTickets, setAllTickets] = useState([]);
+  const [processedTickets, setProcessedTickets] = useState([]);
+  const [batchIndex, setBatchIndex] = useState(0);
+  const [sortColumn, setSortColumn] = useState("id");
+  const [sortOrder, setSortOrder] = useState("desc");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const {
+    analyzeTicket,
+    determinePriority,
+    proposeResponse,
+    determineLanguage,
+  } = useTicketApi(setProcessedTickets);
 
   //  processBatch: processes a batch of tickets
   //  We remove 'allTickets' from dependencies since we always pass tickets as a parameter.
@@ -299,7 +334,7 @@ function App() {
     setProcessedTickets(sortTicketsFn([...processedTickets], column, newOrder));
   };
 
-  if (loading) return <div>Chargement...</div>;
+  if (loading) return <SkeletonTable />;
   if (error) return <div>Erreur: {error}</div>;
 
   return (
